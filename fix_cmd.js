@@ -15,10 +15,10 @@ IF EXIST "%dp0%\\node.exe" (
     SET "_prog=%dp0%\\node.exe"
 ) ELSE (
     SET "_prog=node"
-    SET PATHEXT=%PATHEXT:;.JS;=;%
+    SET PATHEXT=%PATHEXT:;.MJS;=;%
 )
 
-endLocal & goto #_undefined_# 2>NUL || title %COMSPEC% & "%_prog%"  "%dp0%\\node_modules\\${name}\\cli.js" %*`;
+endLocal & goto #_undefined_# 2>NUL || title %COMSPEC% & "%_prog%"  "%dp0%\\node_modules\\${name}\\cli.mjs" %*`;
 }
 
 let appdata = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + "/.local/share");
