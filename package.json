@@ -1,0 +1,40 @@
+{
+  "name": "iacon-folder-report",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node fix_cmd.js"
+  },
+  "bin": {
+      "iacon-folder-report": "./cli.mjs"
+  },
+  "keywords": [],
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/SubHeaven/iacon-folder-report.git"
+  },
+  "author": {
+      "name": "SubHeaven",
+      "email": "subheaven.paulo@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+      "url": "https://github.com/SubHeaven/iacon-folder-report/issues"
+  },
+  "homepage": "https://github.com/SubHeaven/iacon-folder-report#readme",
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0"
+  },
+  "dependencies": {
+    "downloads-folder": "^3.0.3",
+    "inquirer": "^9.0.1",
+    "xlsx": "^0.18.5"
+  }
+}
