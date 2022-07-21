@@ -1,6 +1,11 @@
 import fs from "fs";
 import path from "path";
 
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+console.log(process.env.APPDATA);
+console.log(process.env.HOME);
+console.log(process.env);
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 const cmdCode = (name) => {
     return `@ECHO off
 GOTO start
@@ -18,12 +23,20 @@ IF EXIST "%dp0%\\node.exe" (
     SET PATHEXT=%PATHEXT:;.MJS;=;%
 )
 
+ECHO %dp0%
+
 endLocal & goto #_undefined_# 2>NUL || title %COMSPEC% & "%_prog%"  "%dp0%\\node_modules\\${name}\\cli.mjs" %*`;
 }
 
-let appdata = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + "/.local/share");
+let appdata = process.env.npm_config_global_prefix || (process.platform == 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + "/.local/share");
 appdata = path.join(appdata, 'npm');
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+console.log('appdata');
+console.log(appdata);
 const cmd_path = path.join(appdata, `${process.env.npm_package_name}.cmd`);
+console.log('cmd_path');
+console.log(cmd_path);
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 if (process.env.npm_config_global === 'true') {
     try {
