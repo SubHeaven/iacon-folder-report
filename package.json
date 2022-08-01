@@ -1,14 +1,13 @@
 {
   "name": "iacon-folder-report",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "",
-  "main": "index.mjs",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node ./fix_cmd.mjs"
+    "postinstall": "node ./fix_cmd_install.js"
   },
-  "bin": "./cli.mjs",
+  "bin": "./cli.js",
   "keywords": [],
   "repository": {
     "type": "git",
@@ -32,7 +31,7 @@
   },
   "dependencies": {
     "downloads-folder": "^3.0.3",
-    "inquirer": "^9.0.1",
+    "prompt": "^1.3.0",
     "xlsx": "^0.18.5"
   }
 }

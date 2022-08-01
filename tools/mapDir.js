@@ -1,14 +1,14 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-async-promise-executor */
-import fs from 'fs'
-import path from 'path'
-import { check } from '../utils/marker.mjs'
-import { isDir } from '../utils/global.mjs'
-import getAllFiles from './getAllFiles.mjs'
+const fs = require('fs');
+const path = require('path');
+const { check } = require('../utils/marker.js');
+const { isDir } = require('../utils/global.js');
+const getAllFiles = require('./getAllFiles.js');
 
 const list = []
 
-function mapDir (pathname, level, filter, currentLevel = 0) {
+const mapDir = (pathname, level, filter, currentLevel = 0) => {
     return new Promise(resolve => {
         const dir = path.normalize(pathname)
 
@@ -37,4 +37,4 @@ function mapDir (pathname, level, filter, currentLevel = 0) {
     })
 }
 
-export default mapDir
+module.exports = mapDir

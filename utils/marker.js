@@ -29,7 +29,7 @@ function after (folder, filterValue) {
     ) === filterValue
 }
 
-export function check (folder, filter) {
+function check (folder, filter) {
     const filterValue = filter.replace('%', '')
 
     const marker = filter.indexOf('%')
@@ -51,4 +51,8 @@ export function check (folder, filter) {
     }
 
     return false
+}
+
+module.exports = {
+    check
 }

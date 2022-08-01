@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 console.log(process.env.APPDATA);
@@ -37,13 +37,12 @@ const cmd_path = path.join(appdata, `${process.env.npm_package_name}.cmd`);
 console.log('cmd_path');
 console.log(cmd_path);
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+process.exit(9);
 
-if (process.env.npm_config_global === 'true') {
-    try {
-        const cmd_code = cmdCode(process.env.npm_package_name);
-        fs.writeFileSync(cmd_path, cmd_code);
-    } catch (err) {
-        console.error(err);
-        throw err;
-    }
+try {
+    const cmd_code = cmdCode(process.env.npm_package_name);
+    fs.writeFileSync(cmd_path, cmd_code);
+} catch (err) {
+    console.error(err);
+    throw err;
 }

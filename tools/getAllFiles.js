@@ -1,6 +1,6 @@
-import fs from 'fs'
-import path from 'path'
-import { isDir, isFile } from '../utils/global.mjs'
+const fs = require('fs');
+const path = require('path');
+const { isDir, isFile } = require('../utils/global.js');
 
 function getAllFiles (pathname, ListFiles = []) {
     pathname = path.normalize(pathname)
@@ -20,4 +20,4 @@ function getAllFiles (pathname, ListFiles = []) {
     return ListFiles
 }
 
-export default getAllFiles
+module.exports = getAllFiles

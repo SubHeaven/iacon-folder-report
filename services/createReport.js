@@ -1,6 +1,6 @@
-import mapDir from '../tools/mapDir.mjs'
+const mapDir = require('../tools/mapDir.js');
 
-export default function (pathname, level, filter) {
+module.exports = function (pathname, level, filter) {
     return new Promise(resolve => {
         level = isNaN(parseInt(level)) ? 0 : parseInt(level)
         filter = filter === '' ? '%' : filter

@@ -1,9 +1,9 @@
 // import { spawnSync } from 'child_process'
-import path from 'path'
-import reader from 'xlsx'
-import { randomUUID } from 'crypto'
+const path = require('path');
+const reader = require('xlsx');
+const { randomUUID } = require('crypto');
 
-export default function (data, destpath) {
+module.exports = function (data, destpath) {
     // const { stdout } = spawnSync('powershell',
     //     ["(New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path"],
     //     {
